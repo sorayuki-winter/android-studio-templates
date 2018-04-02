@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="Dagger Mvp Base"
+    minApi="9"
+    minBuildApi="14"
+    description="import base of dagger mvp">
+
+    <category value="Folder" />
+    <formfactor value="Mobile" />
+
+<!--
+    <parameter
+        id="scenesClass"
+        name="Scenes Name"
+        type="string"
+        constraints="nonempty"
+        default="Scenes" />
+        
+    <parameter
+        id="scenesPackage"
+        name="Scenes Package"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.${scenesClass?lower_case}"
+        default="com.mycompany.myapp.scenes" />
+-->
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

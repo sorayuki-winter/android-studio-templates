@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="Dagger Mvp Scenes"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new scenes (dagger mvp)">
+
+    <category value="Folder" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="scenesClass"
+        name="Scenes Name"
+        type="string"
+        constraints="nonempty"
+        default="Scenes" />
+        
+    <parameter
+        id="scenesPackage"
+        name="Scenes Package"
+        type="string"
+        constraints="package"
+        suggest="${packageName}.${scenesClass?lower_case}"
+        default="com.mycompany.myapp.scenes" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+    <parameter
+        id="activityClass"
+        name="Activity Name"
+        type="string"
+        constraints="nonempty"
+        suggest="${scenesClass}Activity"
+        default="ScenesActivity" />
+
+    <parameter
+        id="generateActivityLayout"
+        name="Generate Activity Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="activityLayout"
+        name="Activity Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="activity_main"
+        visibility="generateActivityLayout"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="fragmentClass"
+        name="Fragment Name"
+        type="string"
+        constraints="nonempty"
+        suggest="${scenesClass}Fragment"
+        default="ScenesFragment" />
+
+    <parameter
+        id="generateFragmentLayout"
+        name="Generate Fragment Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="fragmentLayout"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="fragment_${classToResource(scenesClass)}"
+        default="fragment_main"
+        visibility="generateFragmentLayout"
+        help="The name of the layout to create for the fragment" />
+    
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
