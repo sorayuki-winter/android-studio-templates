@@ -9,12 +9,9 @@ public class ${scenesClass}Presenter implements ${scenesClass}Contract.Presenter
     private ${scenesClass}Contract.View mView;
 
     private Repository mRepository;
-    
-    private Context mContext;
 
     @Inject
-    ${scenesClass}Presenter(Context context, Repository repository) {
-        mContext = context;
+    ${scenesClass}Presenter(Repository repository) {
         mRepository = repository;
     }
 
