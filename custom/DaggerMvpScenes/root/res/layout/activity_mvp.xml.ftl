@@ -7,7 +7,7 @@
     tools:context="${scenesPackage}.${activityClass}">
 
     <FrameLayout
-        android:id="@+id/frame_${scenesClass?lower_case}"
+        android:id="@+id/contentFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
