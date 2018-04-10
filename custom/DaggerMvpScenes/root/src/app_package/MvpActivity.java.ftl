@@ -22,6 +22,15 @@ public class ${activityClass} extends DaggerAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.${activityLayout});
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        
         ${fragmentClass} fragment = (${fragmentClass}) fm.findFragmentById(R.id.frame_${scenesLower});
 
         if (fragment == null) {
