@@ -21,13 +21,16 @@ public abstract class ${scenesClass}Module {
 
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract ${fragmentClass} ${scenesLower}Fragment();
+    abstract ${fragmentClass} ${fragmentClass?uncap_first};
 
     @ActivityScoped
     @Binds
-    abstract ${scenesClass}Contract.Presenter ${scenesLower}Presenter(${scenesClass}Presenter presenter);
-
+    abstract ${scenesClass}Contract.Presenter ${scenesClass?uncap_first}Presenter(${scenesClass}Presenter presenter);
+    
+    //TODO: move to di.ActivityBindingModule
+    /*
     @ActivityScoped
     @ContributesAndroidInjector(modules = ${scenesClass}Module.class)
-    abstract ${activityClass} ${scenesLower}Activity();
+    abstract ${activityClass} ${activityClass?uncap_first};
+    */
 }

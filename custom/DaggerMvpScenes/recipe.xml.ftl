@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
-<#import "root://activities/common/kotlin_macros.ftl" as kt>
 <recipe>
-    <@kt.addAllKotlinDependencies />
-    <#if useSupport><dependency mavenUrl="com.android.support:support-v4:${buildApi}.+"/></#if>
-    
-    <dependency mavenUrl="com.android.support:design:${buildApi}.+"/>
-    
+
     <mkdir at="${escapeXmlAttribute(scenesOut)}"/>
 
     <instantiate from="root/src/app_package/MvpFragment.java.ftl"
@@ -31,5 +26,7 @@
     
     <merge from="root/AndroidManifest.xml.ftl"
            to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
+           
+    <open file="${escapeXmlAttribute(scenesOut)}/${scenesClass}Module.java" />
 
 </recipe>

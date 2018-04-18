@@ -15,7 +15,7 @@ public class ${activityClass} extends DaggerAppCompatActivity {
     FragmentManager fm;
 
     @Inject
-    ${fragmentClass} ${scenesLower}Fragment;
+    ${fragmentClass} m${fragmentClass};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +31,11 @@ public class ${activityClass} extends DaggerAppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         
-        ${fragmentClass} fragment = (${fragmentClass}) fm.findFragmentById(R.id.frame_${scenesLower});
+        ${fragmentClass} fragment = (${fragmentClass}) fm.findFragmentById(R.id.content_frame);
 
         if (fragment == null) {
-            fragment = ${scenesLower}Fragment;
-            fm.beginTransaction().replace(R.id.frame_${scenesLower}, fragment).commit();
+            fragment = m${fragmentClass};
+            fm.beginTransaction().replace(R.id.content_frame, fragment).commit();
         }
     }
 }
