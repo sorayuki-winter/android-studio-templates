@@ -2,6 +2,8 @@ package ${scenesPackage};
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 
 import ${packageName}.R;
 
@@ -12,10 +14,9 @@ import dagger.android.support.DaggerAppCompatActivity;
 public class ${activityClass} extends DaggerAppCompatActivity {
 
     @Inject
-    FragmentManager fm;
-
-    @Inject
     ${fragmentClass} m${fragmentClass};
+
+    private FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,8 @@ public class ${activityClass} extends DaggerAppCompatActivity {
             actionBar.setDisplayShowHomeEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        
+
+        fm = getSupportFragmentManager();
         ${fragmentClass} fragment = (${fragmentClass}) fm.findFragmentById(R.id.content_frame);
 
         if (fragment == null) {

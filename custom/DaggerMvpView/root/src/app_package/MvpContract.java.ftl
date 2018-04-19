@@ -15,7 +15,7 @@ public interface ${viewClass}Contract {
     /*
     @FragmentScoped
     @ContributesAndroidInjector
-    abstract ${fragmentClass} ${fragmentClass?uncap_first};
+    abstract ${fragmentClass} ${fragmentClass?uncap_first}();
 
     @ActivityScoped
     @Binds
