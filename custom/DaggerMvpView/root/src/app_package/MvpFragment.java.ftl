@@ -42,6 +42,16 @@ public class ${fragmentClass} extends DaggerFragment implements ${viewClass}Cont
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.${fragmentLayout}, container, false);
+        View view = inflater.inflate(R.layout.${fragmentLayout}, container, false);
+
+        AppCompatActivity activity = ((AppCompatActivity) getActivity());
+        if (activity != null && activity.getSupportActionBar() != null) {
+            android.support.v7.app.ActionBar actionBar = activity.getSupportActionBar();
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.show();
+        }
+        
+        return view;
     }
 }
