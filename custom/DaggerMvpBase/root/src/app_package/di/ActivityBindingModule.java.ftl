@@ -10,5 +10,5 @@ import dagger.Module;
  * When Dagger.Android annotation processor runs it will create 4 subcomponents for us.
  */
 @Module
-public abstract class ActivityBindingModule {
+abstract class ActivityBindingModule {
 }
