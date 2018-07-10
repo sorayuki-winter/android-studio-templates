@@ -15,8 +15,6 @@ public class ${activityClass} extends DaggerAppCompatActivity {
     @Inject
     ${fragmentClass} m${fragmentClass};
 
-    private FragmentManager fm;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +23,7 @@ public class ${activityClass} extends DaggerAppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fm = getSupportFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.content_frame);
 
         if (fragment == null) {

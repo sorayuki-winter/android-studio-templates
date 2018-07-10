@@ -6,8 +6,9 @@ import javax.inject.Inject;
 
 public class ${scenesClass}Presenter implements ${scenesClass}Contract.Presenter {
 
-    private ${scenesClass}Contract.View mView;
+    private boolean isFirst = true;
 
+    private ${scenesClass}Contract.View mView;
     private Repository mRepository;
 
     @Inject
@@ -27,5 +28,10 @@ public class ${scenesClass}Presenter implements ${scenesClass}Contract.Presenter
     }
     
     public void start() {
+        if (isFirst) {
+            isFirst = false;
+        } else {
+            return;
+        }
     }
 }
