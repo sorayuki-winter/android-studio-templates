@@ -15,7 +15,6 @@
     ActivityScoped.java
     AppComponent.java
     ApplicationModule.java
-    ComponentHolder.java
     FragmentScoped.java
     MyDaggerApplication.java
     -->
@@ -27,8 +26,6 @@
                    to="${escapeXmlAttribute(diOut)}/AppComponent.java" />
     <instantiate from="root/src/app_package/di/ApplicationModule.java.ftl"
                    to="${escapeXmlAttribute(diOut)}/ApplicationModule.java" />
-    <instantiate from="root/src/app_package/di/ComponentHolder.java.ftl"
-                   to="${escapeXmlAttribute(diOut)}/ComponentHolder.java" />
     <instantiate from="root/src/app_package/di/FragmentScoped.java.ftl"
                    to="${escapeXmlAttribute(diOut)}/FragmentScoped.java" />
     <instantiate from="root/src/app_package/di/MyDaggerApplication.java.ftl"
