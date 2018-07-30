@@ -9,13 +9,4 @@ public class MyDaggerApplication extends DaggerApplication {
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
         return DaggerAppComponent.builder().application(this).build();
     }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        AppComponent appComponent = DaggerAppComponent.builder()
-                .application(this)
-                .build();
-        ComponentHolder.setAppComponent(appComponent);
-    }
 }
