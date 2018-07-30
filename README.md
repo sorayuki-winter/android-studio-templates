@@ -1,2 +1,6 @@
-# my-android-studio
-my config for android studio
+# android-studio-templates
+file template for android studio, include:
+* Dagger MVP
+  * Base (Data, DI, ...)
+  * Scenes (Module, Activity, View, ...)
+  * View (Contract, Fragment, Presenter, ...)
