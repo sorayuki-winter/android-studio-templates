@@ -33,25 +33,23 @@ import javax.inject.Singleton;
 @Singleton
 public class AppExecutors {
 
-    private static final int THREAD_COUNT = 3;
+    private final ExecutorService diskIO;
 
-    private final Executor diskIO;
-
-    private final Executor networkIO;
+    private final ExecutorService networkIO;
 
     private final Executor mainThread;
 
-    public AppExecutors(Executor diskIO, Executor networkIO, Executor mainThread) {
+    public AppExecutors(ExecutorService diskIO, ExecutorService networkIO, Executor mainThread) {
         this.diskIO = diskIO;
         this.networkIO = networkIO;
         this.mainThread = mainThread;
     }
 
-    public Executor diskIO() {
+    public ExecutorService diskIO() {
         return diskIO;
     }
 
-    public Executor networkIO() {
+    public ExecutorService networkIO() {
         return networkIO;
     }
 
@@ -60,7 +58,7 @@ public class AppExecutors {
     }
 
     public static class MainThreadExecutor implements Executor {
-        private Handler mainThreadHandler = new Handler(Looper.getMainLooper());
+        private final Handler mainThreadHandler = new Handler(Looper.getMainLooper());
 
         @Override
         public void execute(@NonNull Runnable command) {

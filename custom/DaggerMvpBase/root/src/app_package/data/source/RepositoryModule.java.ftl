@@ -19,13 +19,11 @@ import dagger.Provides;
 @Module
 abstract public class RepositoryModule {
 
-    private static final int THREAD_COUNT = 3;
-
     @Singleton
     @Provides
     static AppExecutors provideAppExecutors() {
-        return new AppExecutors(new DiskIOThreadExecutor(),
-                Executors.newFixedThreadPool(THREAD_COUNT),
+        return new AppExecutors(Executors.newSingleThreadExecutor(),
+                Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()),
                 new AppExecutors.MainThreadExecutor());
     }
 
