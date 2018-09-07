@@ -18,7 +18,7 @@ public abstract class ${scenesClass}Module {
     @Binds
     abstract ${scenesClass}Contract.Presenter ${scenesClass?uncap_first}Presenter(${scenesClass}Presenter presenter);
     
-    //TODO: move to di.ActivityBindingModule
+    //TODO: move following code to di.ActivityBindingModule
     /*
     @ActivityScoped
     @ContributesAndroidInjector(modules = ${scenesClass}Module.class)

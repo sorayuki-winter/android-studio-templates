@@ -5,13 +5,13 @@ import ${packageName}.BaseView;
 
 public interface ${viewClass}Contract {
 
-    interface View extends BaseView<Presenter> {
+    interface View extends BaseView {
     }
 
     interface Presenter extends BasePresenter<View> {
     }
     
-    //TODO: move to module
+    //TODO: move following code to module
     /*
     @FragmentScoped
     @ContributesAndroidInjector

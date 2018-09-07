@@ -19,8 +19,7 @@ import dagger.android.support.DaggerFragment;
  */
 public class ${fragmentClass} extends DaggerFragment implements ${scenesClass}Contract.View {
 
-    @Inject
-    ${scenesClass}Contract.Presenter mPresenter;
+    @Inject ${scenesClass}Contract.Presenter mPresenter;
 
     @Inject
     public ${fragmentClass}() {
@@ -44,15 +43,7 @@ public class ${fragmentClass} extends DaggerFragment implements ${scenesClass}Co
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.${fragmentLayout}, container, false);
-
-        AppCompatActivity activity = ((AppCompatActivity) getActivity());
-        if (activity != null && activity.getSupportActionBar() != null) {
-            android.support.v7.app.ActionBar actionBar = activity.getSupportActionBar();
-            actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.show();
-        }
-        
+        // TODO init your fragment
         return view;
     }
 }

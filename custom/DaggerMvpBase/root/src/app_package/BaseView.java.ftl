@@ -16,6 +16,6 @@
 
 package ${packageName};
 
-public interface BaseView<T> {
+public interface BaseView {
 
 }

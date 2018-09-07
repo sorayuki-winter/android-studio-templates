@@ -5,7 +5,7 @@ import ${packageName}.BaseView;
 
 public interface ${scenesClass}Contract {
 
-    interface View extends BaseView<Presenter> {
+    interface View extends BaseView {
     }
 
     interface Presenter extends BasePresenter<View> {

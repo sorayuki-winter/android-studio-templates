@@ -20,7 +20,7 @@
     ActivityBindingModule.java
     ActivityScoped.java
     AppComponent.java
-    ApplicationModule.java
+    AppModule.java
     Component.java
     FragmentScoped.java
     MyDaggerApplication.java
@@ -32,8 +32,8 @@
                    to="${escapeXmlAttribute(diOut)}/ActivityScoped.java" />
     <instantiate from="root/src/app_package/di/AppComponent.java.ftl"
                    to="${escapeXmlAttribute(diOut)}/AppComponent.java" />
-    <instantiate from="root/src/app_package/di/ApplicationModule.java.ftl"
-                   to="${escapeXmlAttribute(diOut)}/ApplicationModule.java" />
+    <instantiate from="root/src/app_package/di/AppModule.java.ftl"
+                   to="${escapeXmlAttribute(diOut)}/AppModule.java" />
     <instantiate from="root/src/app_package/di/Component.java.ftl"
                    to="${escapeXmlAttribute(diOut)}/Component.java" />
     <instantiate from="root/src/app_package/di/FragmentScoped.java.ftl"

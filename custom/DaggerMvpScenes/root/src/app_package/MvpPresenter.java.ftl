@@ -6,10 +6,9 @@ import javax.inject.Inject;
 
 public class ${scenesClass}Presenter implements ${scenesClass}Contract.Presenter {
 
-    private boolean isFirst = true;
-
-    private ${scenesClass}Contract.View mView;
     private Repository mRepository;
+    private ${scenesClass}Contract.View mView;
+    private boolean isFirst = true;
 
     @Inject
     ${scenesClass}Presenter(Repository repository) {
@@ -33,5 +32,6 @@ public class ${scenesClass}Presenter implements ${scenesClass}Contract.Presenter
         } else {
             return;
         }
+        // TODO do first run
     }
 }
