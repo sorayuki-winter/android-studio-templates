@@ -11,7 +11,7 @@ public interface ${viewClass}Contract {
     interface Presenter extends BasePresenter<View> {
     }
     
-    //TODO: move following code to module
+    //TODO: move following code to scenes module
     /*
     @FragmentScoped
     @ContributesAndroidInjector
